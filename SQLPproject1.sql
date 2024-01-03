@@ -1,0 +1,114 @@
+--CREATE TABLE Products (
+--    product_id INT PRIMARY KEY,
+--    product_name VARCHAR(50),
+--    price DECIMAL(10, 2),
+--    quantity_in_stock INT
+--);
+--CREATE TABLE Customer1 (
+--customer_id int,
+--customer_name varchar(50),
+--email varchar(100),
+--age int,
+--gender varchar(50)
+--);
+
+--INSERT INTO Products Values(5, 'Tablet', 299.99, 15),
+--    (6, 'Smartwatch', 149.99, 25),
+--    (7, 'Backpack', 49.99, 40),
+--    (8, 'Gaming Keyboard', 79.99, 20),
+--    (9, 'Bluetooth Speaker', 39.99, 30),
+--    (10, 'Digital Camera', 199.99, 12),
+--    (11, 'Desk Chair', 129.99, 12),
+--    (12, 'External Hard Drive', 89.99, 18),
+--    (13, 'Fitness Tracker', 69.99, 22),
+--    (14, 'Coffee Maker', 59.99, 35),
+--    (15, 'Luggage Set', 119.99, 8),
+--    (16, 'Wireless Mouse', 24.99, 50),
+--    (17, 'TV Stand', 159.99, 14),
+--    (18, 'Power Bank', 29.99, 45),
+--    (19, 'Printed T-Shirt', 14.99, 60),
+--(20, 'Home Theater System', 299.99, 5),
+--(21, 'Car Phone Mount', 9.99, 75),
+--(22, 'Cordless Drill', 79.99, 18),
+--(23, 'Yoga Mat', 19.99, 30),
+--(24, 'Portable Fan', 29.99, 9)
+
+--INSERT INTO customer1 Values
+--    (2, 'Alice Johnson', 'alice.johnson@example.com',23, 'female'),
+--    (3, 'Charlie Brown', 'charlie.brown@example.com',40, 'male'),
+--    (4, 'Diana Rodriguez', 'diana.rodriguez@example.com', 35, 'female'),
+--    (5, 'Edward Davis', 'edward.davis@example.com', 33, 'male'),
+--    (6, 'Fiona Smith', 'fiona.smith@example.com',38, 'female'),
+--    (7, 'George Miller', 'george.miller@example.com', 45, 'male'),
+--    (8, 'Helen Wilson', 'helen.wilson@example.com', 30, 'female'),
+--    (9, 'Ian Taylor', 'ian.taylor@example.com',34, 'male'),
+--    (10, 'Jessica White', 'jessica.white@example.com', 22, 'female'),
+--    (11, 'Kevin Clark', 'kevin.clark@example.com', 32, 'male'),
+--    (12, 'Laura Baker', 'laura.baker@example.com', 33, 'female'),
+--    (13, 'Michael Harris', 'michael.harris@example.com', 26, 'male');
+    
+-- Total revenue for each product
+--SELECT
+--    product_id,
+--    product_name,
+--    SUM(price * quantity_in_stock) AS total_revenue
+--FROM
+--    Products
+--GROUP BY
+--    product_id, product_name;
+
+-- Products with low stock levels
+--SELECT
+--    product_id,
+--    product_name,
+--    quantity_in_stock
+--FROM
+--    Products
+--WHERE
+--    quantity_in_stock < 20;
+
+-- Products with high stock levels
+--SELECT
+--    product_id,
+--    product_name,
+--    quantity_in_stock
+--FROM
+--    Products
+--WHERE
+--    quantity_in_stock > 20;
+
+-- Top-selling Products
+--SELECT product_name, SUM(quantity_in_stock) AS total_sold
+--FROM Products
+--GROUP BY product_name
+--ORDER BY total_sold DESC;
+
+
+
+-- Group product sales by gender
+--SELECT
+--    gender,
+--    product_name,
+--    COUNT(*) AS quantity_sold
+--FROM
+--    Products
+--JOIN
+--    Customer1 ON customer_id = customer_id
+--GROUP BY
+--    gender,
+--    product_name
+--ORDER BY
+--    gender,
+--    product_name;
+
+--group products based on price greater than 200 using CASE statement.
+--SELECT
+--    CASE
+--        WHEN price > 200 THEN 'High Price'
+--        ELSE 'Low Price'
+--    END AS price,
+--    COUNT(*) AS product_count
+--FROM
+--    Products
+--GROUP BY
+--    price;
